@@ -67,21 +67,20 @@ strong {
   outline-offset: 3px;
 }
 
-
 /* Buttons */
 
 .btn {
-display: inline-block;
-padding: .5em 2.5em;
-background: var(--clr-accent);
-color: var(--clr-dark);
-text-decoration: none;
-cursor: pointer;
-font-size: .8rem;
-text-transform: uppercase;
-letter-spacing: 2px;
-font-weight: var(--fw-bold);
-transition: transform 200ms ease-in-out;
+  display: inline-block;
+  padding: 0.5em 2.5em;
+  background: var(--clr-accent);
+  color: var(--clr-dark);
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: var(--fw-bold);
+  transition: transform 200ms ease-in-out;
 }
 
 .btn:hover {
@@ -179,8 +178,6 @@ nav {
   }
 }
 
-
-
 /* My services section */
 
 .my-services {
@@ -197,7 +194,7 @@ nav {
 }
 
 .section__title--services::after {
-  content: '';
+  content: "";
   display: block;
   width: 2em;
   height: 1px;
@@ -216,14 +213,54 @@ nav {
 }
 
 @media (min-width: 800px) {
- .services {
-     display: flex;
-     max-width: 1000px;
-     margin-left: auto;
-     margin-right: auto;
-   }
+  .services {
+    display: flex;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-   .service + .service {
+  .service + .service {
     margin-left: 2em;
-   }
+  }
+}
+
+.about-me {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.about-me__img {
+  box-shadow: var(--bs);
+}
+
+@media (min-width: 600px) {
+  .about-me {
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    grid-template-areas:
+        "title img"
+        "subtitle img"
+        "text img";
+      grid-column-gap: 2em;
+  }
+  .section__title--about {
+    grid-area: title;
+  }
+
+  .section__subtitle--about {
+    grid-column: 1 /-1 ;
+    grid-row: 2;
+    position: relative;
+    left: -1em;
+    width: calc(100% +2em);
+    padding-left: 1em;
+    padding-right: calc(200px + 4em);
+  }
+
+  .about-me__img {
+  grid-area: img;
+  position: relative;
+  z-index: 2;
+  }
 }
